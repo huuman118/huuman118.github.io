@@ -91,21 +91,21 @@ gulp.task('css:compile', function() {
 })
 
 // Minify CSS
-// gulp.task('css:minify', ['css:compile'], function() {
-//   return gulp.src([
-//       './css/*.css',
-//       '!./css/*.min.css'
-//     ])
-//     .pipe(cleanCSS())
-//     .pipe(rename({
-//       suffix: '.min'
-//     }))
-//     .pipe(gulp.dest('./css'))
-//     .pipe(browserSync.stream());
-// });
+gulp.task('css:minify', ['css:compile'], function() {
+  return gulp
+    .src(['./css/*.css', '!./css/*.min.css'])
+    .pipe(cleanCSS())
+    .pipe(
+      rename({
+        suffix: '.min',
+      })
+    )
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.stream())
+})
 
 // // CSS
-// gulp.task('css', ['css:compile', 'css:minify']);
+gulp.task('css', ['css:compile', 'css:minify'])
 
 // Minify JavaScript
 gulp.task('js:minify', function() {

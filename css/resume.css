@@ -142,8 +142,6 @@ a {
   color: #05668d;
 }
 
-a:hover,
-a:focus,
-a:active {
-  color: #05668d;
+a:hover, a:focus, a:active {
+  color: #023143;
 }
